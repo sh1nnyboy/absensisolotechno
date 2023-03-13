@@ -48,9 +48,9 @@ class ArsipController extends Controller
         $berita=DB::table('arsip')->insert([
             'kk' => $request->kk,
             'ktp' => $request->ktp,
-            'ijazah' => $ijazah,
+            'ijazah' => $request->$ijazah,
             'sertifikat' => $request->sertifikat,
-            'suratrekomendasi' => $suratrekomendasi
+            'sr' => $request-> $suratrekomendasi
         ]);
 
         return redirect('/user-profile');
