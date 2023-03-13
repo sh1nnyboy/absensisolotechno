@@ -20,6 +20,8 @@ class CreateArsip extends Migration
             $table->string('ijazah');
             $table->string('sertifikat');
             $table->string('suratrekomendasi');
+
+            $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

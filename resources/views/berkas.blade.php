@@ -51,108 +51,113 @@
 											<th scope="row">1</th>
 											<td>Kartu Keluarga (KK)</td>
 											<td>
-                                                <div class="col-sm-9">
-												    <button type="submit" class="btn btn-light">Upload KK</button>
+											<form method="POST" action="/upload" enctype="multipart/form-data">
+												@csrf
+												<div class="form-group">
+													<label for="file" class="sr-only">Upload file:</label>
+													<input type="file" name="file" id="file" class="form-control">
+												</div>
+												<button type="submit" class="btn btn-primary">Upload KK</button>
+											</form>
+											<div class="col-sm-9">
 												    <button type="submit" class="btn btn-light">Lihat KK</button>
-											    </div>
-                                                <div class="col-sm-9">
-												    <button type="submit" class="btn btn-light">Hapus KK</button>
-											    <!-- </div>
-                                                <div class="col-sm-9"> -->
+												    <button type="submit" class="btn btn-light">Hapus KK</button>	
 												    <button type="submit" class="btn btn-light">Unduh KK</button>
-											    </div>
-                                            </td>
-										</tr>
-
+											</div>
 										<tr>
 											<th scope="row">2</th>
 											<td>Kartu Tanda Penduduk</td>
 											<td>
-                                            <div class="col-sm-9">
-												    <button type="submit" class="btn btn-light">Upload KTP</button>
-											    <!-- </div> 
-                                                <div class="col-sm-9"> -->
+											<form method="POST" action="/upload" enctype="multipart/form-data">
+												@csrf
+												<div class="form-group">
+													<label for="file" class="sr-only">Upload file:</label>
+													<input type="file" name="file" id="file" class="form-control">
+												</div>
+												<button type="submit" class="btn btn-primary">Upload KTP</button>
+											</form>
+											<div class="col-sm-9">
 												    <button type="submit" class="btn btn-light">Lihat KTP</button>
-											    </div>
-                                                <div class="col-sm-9">
-												    <button type="submit" class="btn btn-light">Hapus KTP</button>
-											    <!-- </div>
-                                                <div class="col-sm-9"> -->
+												    <button type="submit" class="btn btn-light">Hapus KTP</button>	
 												    <button type="submit" class="btn btn-light">Unduh KTP</button>
-											    </div>
-                                            </td>
+											</div>
+											</td>
 										</tr>
 										<tr>
 											<th scope="row">3</th>
 											<td>Akta Kelahiran</td>
 											<td>
-                                            <div class="col-sm-9">
-												    <button type="submit" class="btn btn-light">Upload Akta Lahir</button>
-											    <!-- </div> 
-                                                <div class="col-sm-9"> -->
-												    <button type="submit" class="btn btn-light">Lihat Akta Lahir</button>
-											    </div>
-                                                <div class="col-sm-9">
-												    <button type="submit" class="btn btn-light">Hapus Akta Lahir</button>
-											    <!-- </div>
-                                                <div class="col-sm-9"> -->
-												    <button type="submit" class="btn btn-light">Unduh Akta Lahir</button>
-											    </div>
-                                            </td>
+											<form method="POST" action="/upload" enctype="multipart/form-data">
+												@csrf
+												<div class="form-group">
+													<label for="file" class="sr-only">Upload file:</label>
+													<input type="file" name="file" id="file" class="form-control">
+												</div>
+												<button type="submit" class="btn btn-primary">Upload Akta</button>
+											</form>
+											<div class="col-sm-9">
+												    <button type="submit" class="btn btn-light">Lihat Akta</button>
+												    <button type="submit" class="btn btn-light">Hapus Akta</button>	
+												    <button type="submit" class="btn btn-light">Unduh Akta</button>
+											</div>
+											</td>
 										</tr>
 										<tr>
 											<th scope="row">4</th>
 											<td>Ijazah</td>
 											<td>
-                                            <div class="col-sm-9">
-												    <button type="submit" class="btn btn-light">Upload Ijazah</button>
-											    <!-- </div> 
-                                                <div class="col-sm-9"> -->
+											<form method="POST" action="/upload" enctype="multipart/form-data">
+												@csrf
+												<div class="form-group">
+													<label for="file" class="sr-only">Upload file:</label>
+													<input type="file" name="file" id="file" class="form-control">
+												</div>
+												<button type="submit" class="btn btn-primary">Upload Ijazah</button>
+											</form>
+											<div class="col-sm-9">
 												    <button type="submit" class="btn btn-light">Lihat Ijazah</button>
-											    </div>
-                                                <div class="col-sm-9">
-												    <button type="submit" class="btn btn-light">Hapus Ijazah</button>
-											    <!-- </div>
-                                                <div class="col-sm-9"> -->
+												    <button type="submit" class="btn btn-light">Hapus Ijazah</button>	
 												    <button type="submit" class="btn btn-light">Unduh Ijazah</button>
-											    </div>
-                                            </td>
+											</div>
+											</td>
 										</tr>
 										<tr>
 											<th scope="row">5</th>
 											<td>Sertifikat</td>
 											<td>
-                                            <div class="col-sm-9">
-												    <button type="submit" class="btn btn-light">Upload Sertifikat</button>
-											    <!-- </div> 
-                                                <div class="col-sm-9"> -->
-												    <button type="submit" class="btn btn-light">Lihat Sertifikat</button>
-											    </div>
-                                                <div class="col-sm-9">
-												    <button type="submit" class="btn btn-light">Hapus Sertifikat</button>
-											    <!-- </div>
-                                                <div class="col-sm-9"> -->
+											<form method="POST" action="/upload" enctype="multipart/form-data">
+												@csrf
+												<div class="form-group">
+													<label for="file" class="sr-only">Upload file:</label>
+													<input type="file" name="file" id="file" class="form-control">
+												</div>
+												<button type="submit" class="btn btn-primary">Upload Sertifikat</button>
+											</form>
+											<div class="col-sm-9">
+												    <button type="submit" class="btn btn-light">Lihat Setifikat</button>
+												    <button type="submit" class="btn btn-light">Hapus Sertifikat</button>	
 												    <button type="submit" class="btn btn-light">Unduh Sertifikat</button>
-											    </div>
-                                            </td>
+											</div>
+											</td>
 										</tr>
 										<tr>
 											<th scope="row">6</th>
 											<td>Surat Rekomendasi</td>
 											<td>
-                                            <div class="col-sm-9">
-												    <button type="submit" class="btn btn-light">Upload S.Rekomendasi</button>
-											    <!-- </div> 
-                                                <div class="col-sm-9"> -->
-												    <button type="submit" class="btn btn-light">Lihat S.Rekomendasi</button>
-											    </div>
-                                                <div class="col-sm-9">
-												    <button type="submit" class="btn btn-light">Hapus S.Rekomendasi</button>
-											    <!-- </div>
-                                                <div class="col-sm-9"> -->
-												    <button type="submit" class="btn btn-light">Unduh S.Rekomendasi</button>
-											    </div>
-                                            </td>
+											<form method="POST" action="/upload" enctype="multipart/form-data">
+												@csrf
+												<div class="form-group">
+													<label for="file" class="sr-only">Upload file:</label>
+													<input type="file" name="file" id="file" class="form-control">
+												</div>
+												<button type="submit" class="btn btn-primary">Upload Surat Rekomendasi</button>
+											</form>
+											<div class="col-sm-9">
+												    <button type="submit" class="btn btn-light">Lihat Surat Rekomendasi</button>
+												    <button type="submit" class="btn btn-light">Hapus Surat Rekomendasi</button>	
+												    <button type="submit" class="btn btn-light">Unduh Surat Rekomendasi</button>
+											</div>
+											</td>
 									</tbody>
 								</table>
 							</div>
