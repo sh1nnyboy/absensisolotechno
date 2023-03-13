@@ -37,6 +37,8 @@ Route::get('/rekap-absensi', function () {
     return view('rekap-absensi');
 });
 
+//crud berkas
+Route::resource('crudberkas','ArsipController');
 
 
 // Login
