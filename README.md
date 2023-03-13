@@ -8,6 +8,7 @@ A. Ada Box Foto, tetapi tidak ada inputan untuk mengupload Foto
 
 Front-Page:
 A. Masi ada Navigasi "Login" walaupun kita sudah login
+
 Rekap Absensi:
 A. Terdapat record pada Rekap Absensi (Terduga recordanya ada di Codingan, dikarenakan database kosongan)
 B. Tidak terdapat fungsi pada Absensi
