@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\informasi;
-use App\tablesiswa;
+use App\Models\Arsip;
+// use App\tablesiswa;
 use DB;
 use App\Http\Requests;
 
@@ -45,12 +45,20 @@ class ArsipController extends Controller
      */
     public function store(Request $request)
     {
-        $berita=DB::table('arsip')->insert([
+        $this->validate($request, [
+            'kk' => 'required',
+            'ktp' => 'required',
+            'ijazah' => 'required',
+            'sertifikat' => 'required',
+            'suratrekomendasi' => 'required'
+        ]);
+
+        $arsip=DB::table('arsip')->insert([
             'kk' => $request->kk,
             'ktp' => $request->ktp,
-            'ijazah' => $ijazah,
+            'ijazah' => $request->$ijazah,
             'sertifikat' => $request->sertifikat,
-            'sr' => $sr
+            'suratrekomendasi' => $request->$sr
         ]);
 
         return redirect('/user-profile');

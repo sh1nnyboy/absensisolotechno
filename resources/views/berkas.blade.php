@@ -35,8 +35,8 @@
 		<div class="col-lg-8">
 			<div class="card">
 				<div class="card-body">
-					<form action="{{route('crudberkas.store')}}" method="POST" enctype="multipart/form-data">
-					{{ csrf_field() }}
+					<form action="/crudberkas" method="POST" enctype="multipart/form-data">
+					@csrf
 
 					<div class="row mb-3">
 						<div class="col-sm-3">

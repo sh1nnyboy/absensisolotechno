@@ -38,7 +38,9 @@ Route::get('/rekap-absensi', function () {
 });
 
 //crud berkas
-Route::resource('crudberkas','ArsipController');
+// Route::resource('crudberkas','ArsipController');
+// Route::post('/crudberkas', 'App\Http\Controllers\ArsipController@store');
+Route::post('/crudberkas', [ArsipController::class, 'store']);
 
 
 // Login
