@@ -33,90 +33,96 @@
 
         <div class="row">
 		<div class="col-lg-8">
-			<div class="card">
-				<div class="card-body">
-					<form action="{{route('crudberkas.store')}}" method="POST" enctype="multipart/form-data">
-					{{ csrf_field() }}
-
-					<div class="row mb-3">
-						<div class="col-sm-3">
-							<h6 class="mb-0" for="nama">Kartu Keluarga (KK)</h6>
-						</div>
-						<div class="col-sm-9">
-							<div class="form-group">
-								<input type="file" name="kk" id="kk" class="form-control">
+			@if(count($errors) > 0)
+			<div class="alert alert-danger">
+				@foreach ($errors->all() as $error)
+				{{ $error }} <br/>
+				@endforeach
+			</div>
+			@endif
+				<div class="card">
+					<div class="card-body">
+						<form action="{{ route('arsip.upload') }}" method="POST" enctype="multipart/form-data">
+						@csrf
+						<div class="row mb-3">
+							<div class="col-sm-3">
+								<h6 class="mb-0" for="nama">Kartu Keluarga (KK)</h6>
+							</div>
+							<div class="col-sm-9">
+								<div class="form-group">
+									<input type="file" name="kk" id="kk" class="form-control">
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="row mb-3">
-						<div class="col-sm-3">
-							<h6 class="mb-0" for="nama">Kartu Tanda Penduduk (KTP)</h6>
-						</div>
-						<div class="col-sm-9">
-							<div class="form-group">
-								<input type="file" name="ktp" id="ktp" class="form-control">
+						<div class="row mb-3">
+							<div class="col-sm-3">
+								<h6 class="mb-0" for="nama">Kartu Tanda Penduduk (KTP)</h6>
+							</div>
+							<div class="col-sm-9">
+								<div class="form-group">
+									<input type="file" name="ktp" id="ktp" class="form-control">
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="row mb-3">
-						<div class="col-sm-3">
-							<h6 class="mb-0" for="nama">Akta Kelahiran</h6>
-						</div>
-						<div class="col-sm-9">
-							<div class="form-group">
-								<input type="file" name="akta" id="akta" class="form-control">
+						<div class="row mb-3">
+							<div class="col-sm-3">
+								<h6 class="mb-0" for="nama">Akta Kelahiran</h6>
+							</div>
+							<div class="col-sm-9">
+								<div class="form-group">
+									<input type="file" name="akta" id="akta" class="form-control">
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="row mb-3">
-						<div class="col-sm-3">
-							<h6 class="mb-0" for="nama">Ijazah</h6>
-						</div>
-						<div class="col-sm-9">
-							<div class="form-group">
-								<input type="file" name="ijazah" id="ijazah" class="form-control">
+						<div class="row mb-3">
+							<div class="col-sm-3">
+								<h6 class="mb-0" for="nama">Ijazah</h6>
+							</div>
+							<div class="col-sm-9">
+								<div class="form-group">
+									<input type="file" name="ijazah" id="ijazah" class="form-control">
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="row mb-3">
-						<div class="col-sm-3">
-							<h6 class="mb-0" for="nama">Sertifikat</h6>
-						</div>
-						<div class="col-sm-9">
-							<div class="form-group">
-								<input type="file" name="sertifikat" id="sertifikat" class="form-control">
+						<div class="row mb-3">
+							<div class="col-sm-3">
+								<h6 class="mb-0" for="nama">Sertifikat</h6>
+							</div>
+							<div class="col-sm-9">
+								<div class="form-group">
+									<input type="file" name="sertifikat" id="sertifikat" class="form-control">
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="row mb-3">
-						<div class="col-sm-3">
-							<h6 class="mb-0" for="nama">Surat Rekomendasi</h6>
-						</div>
-						<div class="col-sm-9">
-							<div class="form-group">
-								<input type="file" name="sr" id="sr" class="form-control">
+						<div class="row mb-3">
+							<div class="col-sm-3">
+								<h6 class="mb-0" for="nama">Surat Rekomendasi</h6>
+							</div>
+							<div class="col-sm-9">
+								<div class="form-group">
+									<input type="file" name="sr" id="sr" class="form-control">
+								</div>
 							</div>
 						</div>
-					</div>
 
-					<div class="row">
-						<div class="col-sm-3"></div>
-						<div class="col-sm-9">
-							<button type="submit" class="btn btn-light">Simpan</button>
+						<div class="row">
+							<div class="col-sm-3"></div>
+							<div class="col-sm-9">
+								<button type="submit" class="btn btn-light">Simpan</button>
+							</div>
 						</div>
+						</form>
 					</div>
-					</form>
 				</div>
 			</div>
+			
 		</div>
-        
-    </div>
-</div>
-<!-- end-page wrapper -->
+	</div>
+	<!-- end-page wrapper -->
 
-@endsection
+	@endsection

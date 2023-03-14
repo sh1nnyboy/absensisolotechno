@@ -9,6 +9,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ArsipController;
 
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,8 +40,8 @@ Route::get('/rekap-absensi', function () {
 });
 
 //crud berkas
-Route::resource('crudberkas','ArsipController');
-Route::get()
+Route::post('/arsip/upload', [ArsipController::class, 'store'])->name('arsip.upload');
+
 
 // Login
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
