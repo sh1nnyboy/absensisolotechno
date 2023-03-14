@@ -14,7 +14,7 @@ class ArsipController extends Controller
             $arsip = $request->file('arsip');
             $path = $arsip->store('public/arsip');
 
-            DB::table('your_table_name')->insert([
+            DB::table('arsip')->insert([
                 'arsip' => $path
             ]);
 
