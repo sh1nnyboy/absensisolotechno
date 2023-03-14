@@ -50,7 +50,7 @@ class ArsipController extends Controller
             'ktp' => $request->ktp,
             'ijazah' => $request->$ijazah,
             'sertifikat' => $request->sertifikat,
-            'sr' => $request -> $sr
+            'suratrekomendasi' => $request -> $suratrekomendasi
         ]);
 
         return redirect('/user-profile');

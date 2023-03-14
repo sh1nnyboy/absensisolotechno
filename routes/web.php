@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\UserDataController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ArsipController;
 
 
 /*
@@ -37,7 +38,9 @@ Route::get('/rekap-absensi', function () {
     return view('rekap-absensi');
 });
 
-
+//crud berkas
+Route::resource('crudberkas','ArsipController');
+Route::get()
 
 // Login
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
@@ -53,10 +56,8 @@ Route::get('/dashboard', function (){
     return view('dashboard');
 })->middleware('auth');
 
-
 // Route::get('/user-profile', [UserDataController::class, 'edit'])->middleware('auth');
 Route::patch('/user-profile/{id}', [ProfileController::class, 'update'])->name('update');
-
 Route::get('/user-management', [UserDataController::class, 'index'])->middleware('auth');
 Route::get('/edit-user/{id}', [UserDataController::class, 'edit']);
 Route::patch('/update-user/{id}', [UserDataController::class, 'update'])->name('update');
