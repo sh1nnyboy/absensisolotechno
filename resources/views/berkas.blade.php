@@ -42,18 +42,18 @@
 			@endif
 				<div class="card">
 					<div class="card-body">
-						<form action="{{ route('arsip.upload') }}" method="POST" enctype="multipart/form-data">
+					<form method="POST" action="/store" enctype="multipart/form-data">
 						@csrf
-						<div class="row mb-3">
-							<div class="col-sm-3">
-								<h6 class="mb-0" for="nama">Kartu Keluarga (KK)</h6>
-							</div>
-							<div class="col-sm-9">
-								<div class="form-group">
-									<input type="file" name="kk" id="kk" class="form-control">
-								</div>
-							</div>
+						<div class="form-group">
+							<label for="kk">KK:</label>
+							<input type="text" class="form-control" id="kk" name="kk">
 						</div>
+						<div class="form-group">
+							<label for="arsip">Arsip:</label>
+							<input type="file" class="form-control-file" id="arsip" name="arsip">
+						</div>
+						<button type="submit" class="btn btn-primary">Submit</button>
+					</form>
 
 						<div class="row mb-3">
 							<div class="col-sm-3">

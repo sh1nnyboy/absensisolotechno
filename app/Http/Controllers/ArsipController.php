@@ -13,11 +13,13 @@ class ArsipController extends Controller
         if ($request->hasFile('arsip')) {
             $arsip = $request->file('arsip');
             $path = $arsip->store('public/arsip');
-
+    
+            $image = file_get_contents(storage_path('app/' . $path));
+    
             DB::table('arsip')->insert([
-                'arsip' => $path
+                'kk' => $image
             ]);
-
+    
             return redirect()->back()->with('success', 'Arsip uploaded successfully.');
         } else {
             return redirect()->back()->with('error', 'No file was uploaded.');
