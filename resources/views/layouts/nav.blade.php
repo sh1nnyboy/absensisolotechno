@@ -31,10 +31,18 @@
 					<a href="{{ url('berkas') }}">
 						<div class="parent-icon"><i class="bx bx-notepad"></i>
 						</div>
-						<div class="menu-title">Berkas</div>
+						<div class="menu-title">Isi Berkas</div>
 					</a>
 				</li>
 			
+				<li>
+					<a href="{{ url('lihatberkas') }}" class="">
+						<div class="parent-icon"><i class='bx bxs-package'></i>
+						</div>
+						<div class="menu-title">Lihat Berkas </div>
+					</a>
+				</li>
+
 				<li>
 					<a href="{{ url('rekap-absensi') }}" class="">
 						<div class="parent-icon"><i class='bx bx-calendar'></i>

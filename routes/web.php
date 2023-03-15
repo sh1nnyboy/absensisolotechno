@@ -30,6 +30,10 @@ Route::get('/berkas', function () {
     return view('berkas');
 });
 
+Route::get('/lihatberkas', function () {
+    return view('lihatberkas');
+});
+
 Route::get('/user-profile', function () {
     return view('user-profile');
 });

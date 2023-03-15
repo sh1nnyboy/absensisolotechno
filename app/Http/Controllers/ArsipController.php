@@ -24,11 +24,11 @@ class ArsipController extends Controller
             'aktakelahiran' => 'required|file|max:1024',
         ]);
     
-        $kkPath = $request->file('kk')->store('public');
-        $ktpPath = $request->file('ktp')->store('public');
-        $srPath = $request->file('suratrekomendasi')->store('public');
-        $ijPath = $request->file('ijazah')->store('public');
-        $akPath = $request->file('aktakelahiran')->store('public');
+        $kkPath = $request->file('kk')->store('public/arsip');
+        $ktpPath = $request->file('ktp')->store('public/arsip');
+        $srPath = $request->file('suratrekomendasi')->store('public/arsip');
+        $ijPath = $request->file('ijazah')->store('public/arsip');
+        $akPath = $request->file('aktakelahiran')->store('public/arsip');
     
         $arsip = new Arsip;
         $arsip->kk = $kkPath;

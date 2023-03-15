@@ -9,15 +9,14 @@ class CreateArsip extends Migration
     public function up()
     {
         Schema::create('arsip', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
+            $table->string('id_user')->nullable();
             $table->string('kk')->nullable();
             $table->string('ktp')->nullable();
             $table->string('suratrekomendasi')->nullable();
             $table->string('ijazah')->nullable();
             $table->string('aktakelahiran')->nullable();
             $table->timestamps();
-    
-        $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
         });
     }
     
