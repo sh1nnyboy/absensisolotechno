@@ -30,97 +30,90 @@
             </div>
         </div>
         <!-- End Judul -->
+		<div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{ ('Upload Berkas') }}</div>
 
-        <div class="row">
-		<div class="col-lg-8">
-			@if(count($errors) > 0)
-			<div class="alert alert-danger">
-				@foreach ($errors->all() as $error)
-				{{ $error }} <br/>
-				@endforeach
-			</div>
-			@endif
-				<div class="card">
-					<div class="card-body">
-					<form method="POST" action="/store" enctype="multipart/form-data">
-						@csrf
-						<div class="form-group">
-							<label for="kk">KK:</label>
-							<input type="text" class="form-control" id="kk" name="kk">
-						</div>
-						<div class="form-group">
-							<label for="arsip">Arsip:</label>
-							<input type="file" class="form-control-file" id="arsip" name="arsip">
-						</div>
-						<button type="submit" class="btn btn-primary">Submit</button>
-					</form>
+                    <div class="card-body">
+                        @if ($message = Session::get('success'))
+                            <div class="alert alert-success" role="alert">
+                                {{ $message }}
+                            </div>
+                        @endif
 
-						<div class="row mb-3">
-							<div class="col-sm-3">
-								<h6 class="mb-0" for="nama">Kartu Tanda Penduduk (KTP)</h6>
-							</div>
-							<div class="col-sm-9">
-								<div class="form-group">
-									<input type="file" name="ktp" id="ktp" class="form-control">
-								</div>
-							</div>
-						</div>
+                        <form method="POST" action="{{ route('berkas.store') }}" enctype="multipart/form-data">
+                            @csrf
 
-						<div class="row mb-3">
-							<div class="col-sm-3">
-								<h6 class="mb-0" for="nama">Akta Kelahiran</h6>
-							</div>
-							<div class="col-sm-9">
-								<div class="form-group">
-									<input type="file" name="akta" id="akta" class="form-control">
-								</div>
-							</div>
-						</div>
+                            <div class="form-group">
+                                <label for="kk">Kartu Keluarga (KK)</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="kk" name="kk">
+                                        <label class="custom-file-label" for="kk">Choose file</label>
+                                    </div>
+                                </div>
+                                @error('kk')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
 
-						<div class="row mb-3">
-							<div class="col-sm-3">
-								<h6 class="mb-0" for="nama">Ijazah</h6>
-							</div>
-							<div class="col-sm-9">
-								<div class="form-group">
-									<input type="file" name="ijazah" id="ijazah" class="form-control">
-								</div>
-							</div>
-						</div>
+                            <div class="form-group">
+                                <label for="ktp">KTP</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="ktp" name="ktp">
+                                        <label class="custom-file-label" for="ktp">Choose file</label>
+                                    </div>
+                                </div>
+                                @error('ktp')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
 
-						<div class="row mb-3">
-							<div class="col-sm-3">
-								<h6 class="mb-0" for="nama">Sertifikat</h6>
-							</div>
-							<div class="col-sm-9">
-								<div class="form-group">
-									<input type="file" name="sertifikat" id="sertifikat" class="form-control">
-								</div>
-							</div>
-						</div>
+                            <div class="form-group">
+                                <label for="suratrekomendasi">Surat Rekomendasi</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="suratrekomendasi" name="suratrekomendasi">
+                                        <label class="custom-file-label" for="suratrekomendasi">Choose file</label>
+                                    </div>
+                                </div>
+                                @error('suratrekomendasi')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
 
-						<div class="row mb-3">
-							<div class="col-sm-3">
-								<h6 class="mb-0" for="nama">Surat Rekomendasi</h6>
-							</div>
-							<div class="col-sm-9">
-								<div class="form-group">
-									<input type="file" name="sr" id="sr" class="form-control">
-								</div>
-							</div>
-						</div>
+                            <div class="form-group">
+                                <label for="ijazah">Ijazah</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="ijazah" name="ijazah">
+                                        <label class="custom-file-label" for="ijazah">Choose file</label>
+                                    </div>
+                                </div>
+                                @error('ijazah')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
 
-						<div class="row">
-							<div class="col-sm-3"></div>
-							<div class="col-sm-9">
-								<button type="submit" class="btn btn-light">Simpan</button>
+                            <div class="form-group">
+                                <label for="aktakelahiran">Akta Kelahiran</label>
+                                <div class="input-group">
+                                    <div class="custom-file">
+                                        <input type="file" class="custom-file-input" id="aktakelahiran" name="aktakelahiran">
+                                        <label class="custom-file-label" for="aktakelahiran">Choose file</label>
+                                    </div>
+                                </div>
+                                @error('aktakelahiran')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
 							</div>
-						</div>
-						</form>
-					</div>
-				</div>
-			</div>
-			
+							<button type="submit" class="btn btn-primary">{{ ('Upload') }}</button>
+							</form>
+
+        
 		</div>
 	</div>
 	<!-- end-page wrapper -->

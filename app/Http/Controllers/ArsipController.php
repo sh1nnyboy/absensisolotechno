@@ -2,27 +2,57 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Arsip;
 use Illuminate\Http\Request;
-use DB;
-use App\Http\Requests;
+use Illuminate\Support\Facades\Storage;
 
 class ArsipController extends Controller
 {
+    public function index()
+    {
+        $arsips = Arsip::all();
+        return view('berkas', compact('arsip'));
+    }
+
     public function store(Request $request)
     {
-        if ($request->hasFile('arsip')) {
-            $arsip = $request->file('arsip');
-            $path = $arsip->store('public/arsip');
+        $validatedData = $request->validate([
+            'kk' => 'required|file|max:1024',
+            'ktp' => 'required|file|max:1024',
+            'suratrekomendasi' => 'required|file|max:1024',
+            'ijazah' => 'required|file|max:1024',
+            'aktakelahiran' => 'required|file|max:1024',
+        ]);
     
-            $image = file_get_contents(storage_path('app/' . $path));
+        $kkPath = $request->file('kk')->store('public');
+        $ktpPath = $request->file('ktp')->store('public');
+        $srPath = $request->file('suratrekomendasi')->store('public');
+        $ijPath = $request->file('ijazah')->store('public');
+        $akPath = $request->file('aktakelahiran')->store('public');
     
-            DB::table('arsip')->insert([
-                'kk' => $image
-            ]);
+        $arsip = new Arsip;
+        $arsip->kk = $kkPath;
+        $arsip->ktp = $ktpPath;
+        $arsip->suratrekomendasi = $srPath;
+        $arsip->ijazah = $ijPath;
+        $arsip->aktakelahiran = $akPath;
+        $arsip->save();
     
-            return redirect()->back()->with('success', 'Arsip uploaded successfully.');
-        } else {
-            return redirect()->back()->with('error', 'No file was uploaded.');
-        }
+        return redirect()->back()->with('success', 'Berkas berhasil diupload.');
+    }
+
+    public function destroy($id)
+    {
+        $arsip = Arsip::findOrFail($id);
+
+        Storage::delete($arsip->kk);
+        Storage::delete($arsip->ktp);
+        Storage::delete($arsip->suratrekomendasi);
+        Storage::delete($arsip->ijazah);
+        Storage::delete($arsip->aktakelahiran);
+
+        $arsip->delete();
+
+        return redirect()->back()->with('success', 'Berkas berhasil dihapus.');
     }
 }
