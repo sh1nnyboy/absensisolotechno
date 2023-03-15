@@ -10,7 +10,7 @@ Front-Page:
 A. Masi ada Navigasi "Login" walaupun kita sudah login ✅
 
 Rekap Absensi:
-A. Terdapat record pada Rekap Absensi (Terduga recordanya ada di Codingan, dikarenakan database kosongan)
+A. Terdapat record pada Rekap Absensi (Static)
 B. Tidak terdapat fungsi pada Absensi
 
 Berkas:
