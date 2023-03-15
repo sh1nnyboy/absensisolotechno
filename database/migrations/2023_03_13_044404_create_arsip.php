@@ -15,11 +15,11 @@ class CreateArsip extends Migration
     {
         Schema::create('arsip', function (Blueprint $table) {
             $table->id();
-            $table->string('kk');
-            $table->string('ktp');
-            $table->string('ijazah');
-            $table->string('sertifikat');
-            $table->string('suratrekomendasi');
+            $table->binary('kk')->nullable();
+            $table->binary('ktp')->nullable();
+            $table->binary('ijazah')->nullable();
+            $table->binary('sertifikat')->nullable();
+            $table->binary('suratrekomendasi')->nullable();
 
             $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
         });
