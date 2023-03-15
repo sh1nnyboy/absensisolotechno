@@ -11,5 +11,11 @@ class Arsip extends Model
 
     protected $table = 'arsip';
 
-    protected $guarded = [];
+    protected $fillable = [
+        'kk',
+        'ktp',
+        'suratrekomendasi',
+        'ijazah',
+        'aktakelahiran'
+    ];
 }

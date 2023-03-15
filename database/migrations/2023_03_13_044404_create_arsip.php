@@ -6,32 +6,23 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateArsip extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('arsip', function (Blueprint $table) {
-            $table->id();
-            $table->binary('kk')->nullable();
-            $table->binary('ktp')->nullable();
-            $table->binary('ijazah')->nullable();
-            $table->binary('sertifikat')->nullable();
-            $table->binary('suratrekomendasi')->nullable();
-
-            $table->foreign('id')->references('id')->on('users')->onDelete('cascade');
+            $table->increments('id');
+            $table->string('id_user')->nullable();
+            $table->string('kk')->nullable();
+            $table->string('ktp')->nullable();
+            $table->string('suratrekomendasi')->nullable();
+            $table->string('ijazah')->nullable();
+            $table->string('aktakelahiran')->nullable();
+            $table->timestamps();
         });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
     public function down()
     {
         Schema::dropIfExists('arsip');
     }
+    
 }

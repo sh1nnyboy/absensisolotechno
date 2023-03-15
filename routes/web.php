@@ -30,6 +30,10 @@ Route::get('/berkas', function () {
     return view('berkas');
 });
 
+Route::get('/lihatberkas', function () {
+    return view('lihatberkas');
+});
+
 Route::get('/user-profile', function () {
     return view('user-profile');
 });
@@ -40,7 +44,7 @@ Route::get('/rekap-absensi', function () {
 });
 
 //crud berkas
-Route::post('/arsip/upload', [ArsipController::class, 'store'])->name('arsip.upload');
+Route::post('/berkas', [App\Http\Controllers\ArsipController::class, 'store'])->name('berkas.store');
 
 
 // Login

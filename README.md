@@ -7,12 +7,16 @@ Biodata:
 A. Ada Box Foto, tetapi tidak ada inputan untuk mengupload Foto
 
 Front-Page:
-A. Masi ada Navigasi "Login" walaupun kita sudah login
+A. Masi ada Navigasi "Login" walaupun kita sudah login ✅
 
 Rekap Absensi:
-A. Terdapat record pada Rekap Absensi (Terduga recordanya ada di Codingan, dikarenakan database kosongan)
+A. Terdapat record pada Rekap Absensi (Static)
 B. Tidak terdapat fungsi pada Absensi
 
 Berkas:
-A. Modify nama berkas 
+A. Modify nama berkas ✅
 B. Tidak ada fungsi semuanya (Upload/Lihat/Hapus/Unduh) hanya tampilan
+    -upload ✅
+    -lihat
+    -hapus
+    -unduh
