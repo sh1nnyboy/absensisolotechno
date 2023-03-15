@@ -11,7 +11,7 @@ class ArsipController extends Controller
     public function index()
     {
         $arsips = Arsip::all();
-        return view('berkas', compact('arsip'));
+        return view('lihatberkas', compact('arsips'));
     }
 
     public function store(Request $request)

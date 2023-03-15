@@ -30,7 +30,41 @@
             </div>
         </div>
         <!-- End Judul -->
-
+        <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-14">
+                <div class="card">
+                <div class="card-header">{{ ('Daftar Arsip') }}</div>
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>KK</th>
+                <th>KTP</td>
+                <th>Surat Rekomendasi</th>
+                <th>Ijazah</th>
+                <th>Akta Kelahiran</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($arsips as $arsip)
+            <tr>
+                <td>{{ $loop->iteration }}</td>
+                <td><a href="{{ Storage::url($arsip->kk) }}" target="_blank">{{ $arsip->kk }}</a></td>
+                <td><a href="{{ Storage::url($arsip->ktp) }}" target="_blank">{{ $arsip->ktp }}</a></td>
+                <td><a href="{{ Storage::url($arsip->suratrekomendasi) }}" target="_blank">{{ $arsip->suratrekomendasi }}</a></td>
+                <td><a href="{{ Storage::url($arsip->ijazah) }}" target="_blank">{{ $arsip->ijazah }}</a></td>
+                <td><a href="{{ Storage::url($arsip->aktakelahiran) }}" target="_blank">{{ $arsip->aktakelahiran }}</a></td>
+                        <button type="submit" class="btn btn-danger">Hapus</button>
+                    </form>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+</div>
 	<!-- end-page wrapper -->
 
 	@endsection

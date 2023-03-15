@@ -44,7 +44,9 @@ Route::get('/rekap-absensi', function () {
 });
 
 //crud berkas
-Route::post('/berkas', [App\Http\Controllers\ArsipController::class, 'store'])->name('berkas.store');
+Route::post('/berkas', [ArsipController::class, 'store'])->name('berkas.store');
+Route::get('/lihatberkas', [ArsipController::class, 'index'])->name('lihatberkas.index');
+
 
 
 // Login
